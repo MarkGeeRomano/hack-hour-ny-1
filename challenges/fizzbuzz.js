@@ -23,16 +23,18 @@ function fizzbuzz(num) {
   var newArr = [];
 
   for (var i = 1; i <= num; i++) {
-    if (i % 3 === 0) {
+    if ((i % 3 === 0) && (i % 5 !== 0)) {
       newArr.push('fizz');
-    } else if (i % 5 === 0 ) {
+    } else if ((i % 5 === 0) && (i % 3 !== 0)) {
       newArr.push('buzz');
-    } else if (i % 5 === 0 && i % 3 === 0) {
+    } else if ((i % 3 === 0) && (i % 5 === 0)) {
       newArr.push('fizzbuzz');
     } else {
       newArr.push(i);
     }
   }
+
+
 
   return newArr;
 }
