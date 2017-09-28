@@ -39,6 +39,6 @@ function drawStairs(n) {
 		str="";
 	}
 }
-drawStairs(10);
+//drawStairs(10);
 
 module.exports = drawStairs;
