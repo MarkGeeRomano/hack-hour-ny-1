@@ -41,4 +41,4 @@ function drawStairs(n) {
 }
 drawStairs(10);
 
-//module.exports = drawStairs;
+module.exports = drawStairs;
