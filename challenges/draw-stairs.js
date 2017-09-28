@@ -14,8 +14,15 @@
 */
 
 function drawStairs(n) {
-
+    const spacerString = '\xa0'.repeat(n);
+    const stairsString = '*'.repeat(n);
+  	// console.log("spacerString[" + spacerString.length + "] === " + JSON.stringify(spacerString));
+  	// console.log("stairsString[" + stairsString.length + "] === " + stairsString);
+    for (let i = 1; i <= n; i++) {
+        console.log(spacerString.substr(0,n-i).concat(stairsString.substr(n-i)));
+    }
 }
 
+//drawStairs(6);
 
 module.exports = drawStairs;
