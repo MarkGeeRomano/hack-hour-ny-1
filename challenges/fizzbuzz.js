@@ -34,6 +34,7 @@ function fizzbuzz(num) {
                     if ( i % 5 ===0  && i % 3 ===0 ) {
                       newArr.push('fizzbuzz')
                     }
+                    //C
                     if ( i % 5 !== 0 && i % 3 !==0 ) {
                         newArr.push(i)
                     }
