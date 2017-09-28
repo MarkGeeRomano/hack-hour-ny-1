@@ -23,15 +23,7 @@ function fizzbuzz(num) {
 // set the conditions of fizz, buzz, and fizzbuzz,
     // Use control flow statements to set the conditions
         // push each satisfied conditions into an new array
-        function fizzbuzz(num) {
-            // GOAL: return an array from 1 up to num
-            // set empty array
-            // set a loop that sets to the length of num and increment by 1
-            // set the conditions of fizz, buzz, and fizzbuzz,
-                // Use control flow statements to set the conditions
-                    // push each satisfied conditions into an new array
-            
-                const newArr = []
+            const newArr = []
                 for(let i = 1; i <= num; i ++) {
                     if( i % 3 == 0) {
                       newArr.push('fizz')
@@ -42,6 +34,7 @@ function fizzbuzz(num) {
                     if ( i % 5 ===0  && i % 3 ===0 ) {
                       newArr.push('fizzbuzz')
                     }
+                    //C
                     if ( i % 5 !== 0 && i % 3 !==0 ) {
                         newArr.push(i)
                     }
@@ -49,8 +42,24 @@ function fizzbuzz(num) {
                 } 
                 return newArr
             }
-            
-            fizzbuzz(16)
-}
+
 
 module.exports = fizzbuzz;
+
+// function fizzbuzz(n) {
+    //instantiate cache
+//     const cache = [];
+            //instantiate empty string
+//     for(let i = 1; i <=n; i++) {
+//         let str = '';
+            //check if i is divisible by 3
+//         if(!(i % 3)) str += `fizz`;
+            //check if i is divisible by 5
+//         if(!(i%5)) str += `buzz`;
+            //concat buzz to string
+//         if(str) cache.push(str);
+            //check if string has been concat
+//         else cache.push(i);
+//     }
+//     return cache;
+// }
