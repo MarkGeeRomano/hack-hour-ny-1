@@ -17,12 +17,13 @@ function drawStairs(n) {
   let str = " ";
   let astr = "*";
   str = str.repeat(n);
+  let final = "";
   for (let i = 0; i < n; i += 1) {
     let startInd = (n - 1) - i;
-    let sub = str.substr(0, startInd);
-    sub += astr.repeat(n-startInd);
-    console.log(sub);
+    final += str.substr(0, startInd);
+    final += astr.repeat(n-startInd) + "\n";
   }
+  console.log(final);
 }
 
 module.exports = drawStairs;
