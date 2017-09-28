@@ -27,10 +27,10 @@ function fizzbuzz(num, fizz = 3, buzz = 5) {
     let str = '';
     // check if n is divisible by 3
     // set fizz if true
-    if (i % fizz === 0) str += fizz;
+    if (i % fizz === 0) str += 'fizz';
     // check if n is divisible by 3
     // set fizz if true
-    if (i % buzz === 0) str += buzz;
+    if (i % buzz === 0) str += 'buzz';
     // push whatever makes most sense from string or i
     acc.push(str || i);
   }
