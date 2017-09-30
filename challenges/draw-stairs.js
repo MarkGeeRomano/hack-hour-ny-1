@@ -13,25 +13,25 @@
 
 */
 
-// function drawStairs(n) {
-// // total spaces for all lines = n
-// // total lines = n
-// // each line has +1 than the above line
-//
-//   var dotInLine = 1;
-//   for (var i = 1; i <= n; i++) {
-//     var whitespace = n - dotInLine;
-//     var str = ''
-//     while (str.length !== whitespace) {
-//       str += ' ';
-//     }
-//     while (str.length !== n) {
-//       str += '*';
-//     }
-//     console.log(str);
-//     dotInLine++;
-//   }
-// }
+function drawStairs(n) {
+// total spaces for all lines = n
+// total lines = n
+// each line has +1 than the above line
+
+  var dotInLine = 1;
+  for (var i = 1; i <= n; i++) {
+    var whitespace = n - dotInLine;
+    var str = ''
+    while (str.length !== whitespace) {
+      str += ' ';
+    }
+    while (str.length !== n) {
+      str += '*';
+
+    console.log(str);
+    dotInLine++;
+  }
+}
 
 function drawStairs(n) {
   var dotInLine = 1;
