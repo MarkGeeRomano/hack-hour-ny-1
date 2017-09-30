@@ -27,7 +27,7 @@ function modemean(array) {
   }
 
   let avg = Math.floor(sum/array.length);
-  return (avg === max);
+  return Number(avg) === Number(max) ? true : false;
 }
 
 module.exports = modemean;
