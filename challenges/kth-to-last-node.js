@@ -22,6 +22,10 @@ function Node(val) {
 }
 
 function kthToLastNode(k, head) {
+//find the length of the number of nodes you have (looping)
+//have a counter keeping track of k; k = 0;
+ //if this.next === null go back once; ++k;
+ //check counter; if === k then return node[value];
 
 }
 
