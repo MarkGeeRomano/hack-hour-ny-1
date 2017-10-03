@@ -22,7 +22,19 @@ function Node(val) {
 }
 
 function kthToLastNode(k, head) {
-
+  let length = 0;
+  for (let i = head; i; i = i.next) {
+    length += 1;
+  }
+  const stopInd = length - k;
+  let count = 0;
+  let kthNode;
+  for (let j = head; j && count !== stopInd+1; j = j.next) {
+    if (count++ === stopInd) {
+      kthNode = j;
+    }
+  }
+  return kthNode;
 }
 
 module.exports = {Node: Node, kthToLastNode: kthToLastNode};
