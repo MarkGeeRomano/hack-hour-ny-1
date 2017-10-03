@@ -29,8 +29,8 @@ function drawStairs(n) {
     let fullWidthStair = blankStairWidth.slice(0, blankStairWidth.length - i);
     // concat the copy of maxwidth.length - i to string holdinng ('*' * n)
     fullWidthStair += stair;
-    // add a newline character and space at the end of the current string if not n iteration
-    if (i !== n) fullWidthStair += '\n ';
+    // add a newline character and space at the end of the current string if not nth iteration
+    if (i !== n) fullWidthStair += '\n';
     // concat this string to empty str
     stairs += fullWidthStair;
   }
