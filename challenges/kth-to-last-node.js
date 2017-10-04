@@ -46,7 +46,6 @@ let fastNode = head;
 for(let i = 0; i < k; i += 1) {
   fastNode = fastNode.next;
 }
-
 //If fastNode is not null (exceeding the length), it both nodes will start at their respective positons,
 //fastNode being k ahead of slowNode;
 while(fastNode) {
