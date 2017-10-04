@@ -31,9 +31,9 @@ function Node(val) {
 }
 // let node = new Node(val);
 function kthToLastNode(k, head) {
-  let node = new Node(val);
+  // let node = new Node(v?al);
   // get a length of the linked list
-  let length = this.length;
+  let length = 1;
   // declar a curr variable dn intialize it to the head
   let current = head;
   //check if number k is les than 1 or not a number, if so return undefined;
@@ -43,7 +43,7 @@ function kthToLastNode(k, head) {
     length += 1;
     current = current.next;
   }
-  // define index of the value kth to last 
+  // define index of the value kth to last
   let i = length - k;
   current = head;
 
