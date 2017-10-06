@@ -13,8 +13,23 @@
  * DO NOT USE THE BUILT IN REVERSE METHOD
  */
 
-function reverseInPlace(array) {
 
+function reverseInPlace(array) {
+ let length = array.length;
+
+
+ var spliced = array.splice(0);
+
+ for (var i = 0; i < length; i++) {
+   var curr = array[i];
+   var other = spliced[length - (i + 1)];
+
+
+   array.splice(i, 1, other);
+ }
+
+
+ return array;
 }
 
 module.exports = reverseInPlace;
