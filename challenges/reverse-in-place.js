@@ -13,8 +13,17 @@
  * DO NOT USE THE BUILT IN REVERSE METHOD
  */
 
-function reverseInPlace(array) {
-
-}
+ function reverseInPlace(array) {
+   let delNum = array.length;
+   let num = 0
+   for (let i = array.length - 1; i >= 0; i--) {
+     array[delNum + num++] = array[i];
+   }
+   while (delNum > 0) {
+   	array.shift();
+   	delNum--;
+   }
+   return array;
+ }
 
 module.exports = reverseInPlace;
