@@ -31,7 +31,7 @@ function balancedParens(input){
     "]" : "[",
     ")" : "("
   };
-  if (input.length === 1) {
+  if (pure.length === 1) {
     return false;
   }
   let value = true;
