@@ -25,6 +25,31 @@
  */
 
 function balancedParens(input){
+  input = input.replace(/\w/g, ''); // keeps all non-word letters
+  const cache = {
+    '(': 0,
+    ')': 0,
+    '[': 0,
+    ']': 0,
+    '{': 0,
+    '}': 0,
+  };
+  const chars = '()[]{}';
+  for (let i = 0, b = input.length - 1; i < Math.floor(input.length/2); i++) {
+    if (cache[input[i]]) cache[input[i]]++;
+    if (cache[input[b]]) cache[input[b]]++;
+    b--;
+  }
+
+  for (key in cache) {
+    if (cache[key] > 0) {
+      switch (cache[key]) {
+        case '('
+      }
+    }
+  }
+
+
 
 }
 
