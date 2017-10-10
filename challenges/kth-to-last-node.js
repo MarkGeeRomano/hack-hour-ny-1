@@ -32,3 +32,6 @@ function kthToLastNode(k, head) {
 }
 
 module.exports = { Node: Node, kthToLastNode: kthToLastNode };
+
+
+// Any place where you find yourself usimg nested loops you can be fairly certain there is a better way to solve it.

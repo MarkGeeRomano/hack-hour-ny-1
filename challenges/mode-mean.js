@@ -11,23 +11,21 @@
 
 
 function modemean(array) {
-
   const sorted = array.sort((a, b) => a - b);
-
-  const mode = (function () {
-    // number which appears most often (largest of in case of tie)
-    const mode = [];
-
-    for (let i = 0; i < array.length; i += 1) {
-      if ( i === 0) mode[0] = sorted[i];
+  let mean = 0; // all values added/ total number of values and floored
+  let mode = sorted[0]; // largest most repeated value
+  let check = mode;
+  let count = 0; // count for mode
+  for (let i = 0; i < sorted.length; i += 1) {
+    mean += sorted[i];
+    if (mode === sorted[i]) {
+      counter += 1
+    } else {
       
     }
-  }());
-  const mean = (function () {
-    // all added values / total values floored
-  }());
+  }
 
-  return mean === mode;
+  return Math.floor(mean / sorted.length) === mode;
 }
 
 module.exports = modemean;
