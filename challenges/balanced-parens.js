@@ -25,7 +25,31 @@
  */
 
 function balancedParens(input){
+  const lefty = '([{';
+  const righty = ')]}';
+  const obj = {'(':')', '[':']', '{':'}'};
+  var newArr = [];
+
+  for (var i = 0; i < input.length; i++) {
+    if (lefy.indexOf(input[i]) > -1 || righty.indexOf(input[i]) > -1) {
+      newArray.push(input[i]);
+    }
+  }
+
+  if (newArr.length % 2 !== 0) {
+    return false;
+  }
+
+  for (let k = 0; k < str.length; k++) {
+    if (str[k] === ')' || str[k] === ']' || str[k] === '}') {
+      return false;
+    }
+  }
+
 
 }
+
+
+
 
 module.exports = balancedParens;
