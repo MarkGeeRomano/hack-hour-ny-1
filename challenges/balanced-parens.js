@@ -35,7 +35,12 @@ function balancedParens(input){
 
 	let inputLeng=input.length;
 	let allParenslLeng=allParens.length;
-	let b=true;
+	let p="(";
+	let c="{";
+	let s="[";
+	let bp=true;
+	let bc=true;
+	let bs=true;
 	if( inputLeng<1 ) return false;
 
 	for (let i = 0; i < inputLeng; i++) {
@@ -45,14 +50,36 @@ function balancedParens(input){
 			allParens[j]
 			//console.log(  allParens[j] )
 			if( input.charAt(i) === allParens.charAt(j)  ){
-				console.log( " input == allParens: ", input[i] );
-				b? b=false: b=true;
+				//console.log( " input == allParens: ", input[i] );
+				bp? bp=false: bp=true;
+				bc? bc=false: bc=true;
+				bs? bs=false: bs=true;
+
+				if( input.charAt(i)=="(" ||input.charAt(i)==")" ){
+				if(input.charAt(i) == p){ p == "(" ? p=")":p="(" ;  }else{return false;}
+				}
+				
+				/*if( input.charAt(i)=="{" ||input.charAt(i)=="}" ){
+				if(input.charAt(i) == c){ c == "{" ? c="}":c="{" ;  }else{return false;}
+				}
+				if( input.charAt(i)=="[" ||input.charAt(i)=="]" ){
+				if(input.charAt(i) == s){ s == "[" ? s="]":s="[" ;  }else{return false;}	
+				}*/
 			}
 		}
 	}
 
-return b;
+return bp /*&& bc && bs*/;
 }
-
+/* console.log(balancedParens('('));  // false
+ console.log(balancedParens('()')); // true
+ console.log(balancedParens(')('));  // false */
+ console.log(balancedParens('(())'));  // true 1
+/* console.log(balancedParens('[](){}')); // true
+ console.log(balancedParens('[({})]'));   // true
+ console.log(balancedParens('[(]{)}')); // false 1
+ console.log(balancedParens(' var wow  = { yo: thisIsAwesome() }')); // true
+ console.log(balancedParens(' var hubble = function() { telescopes.awesome();')); // false
+*/
 //console.log(balancedParens("123)13{}123[]"));
-module.exports = balancedParens;
+//module.exports = balancedParens;
