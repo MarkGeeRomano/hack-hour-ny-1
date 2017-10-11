@@ -41,3 +41,4 @@ console.log ("modemean([1,2,2,3]) === " + modemean([1,2,2,3]));
 console.log ("modemean([1,2,3,3]) === " + modemean([1,2,3,3]));
 console.log ("modemean([1,2,2,3]) === " + modemean([1,2,1,3]));
 module.exports = modemean;
+
