@@ -37,11 +37,15 @@ for(var i = 0; i < input.length; i += 1) {
     if(input[i] === ')') return false;
     //if an opening bracket, continue
     if(input[i] === '(' || '{' || '[') {
+    //any opening brackets increase by 1
     if(input[i] === '(' || '{' || '[') open += 1;
+    //any closing brackets increase by 1
     if(input[i] === ')' || '{' || '[') close += 1;
         }
     }
+    //if the opening and closing increase equals
     if(close === open) return true;
+    
 }
 
 module.exports = balancedParens;
