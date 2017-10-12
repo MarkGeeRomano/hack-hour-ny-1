@@ -25,30 +25,48 @@
  */
 
 function balancedParens(input){
-  const lefty = '([{';
-  const righty = ')]}';
-  const obj = {'(':')', '[':']', '{':'}'};
-  var newArr = [];
-
-  for (var i = 0; i < input.length; i++) {
-    if (lefy.indexOf(input[i]) > -1 || righty.indexOf(input[i]) > -1) {
-      newArray.push(input[i]);
-    }
+  //create map
+  const map = {'{':'}', '[': ']', '(':')'}
+  //make a cache
+  const cache = [];
+  //loop through input[i]
+  let val;
+  //set a var to input[i]
+  for (let i = 0; i < input.length; i++) {
+    input[i]
   }
-
-  if (newArr.length % 2 !== 0) {
-    return false;
-  }
-
-  for (let k = 0; k < str.length; k++) {
-    if (str[k] === ')' || str[k] === ']' || str[k] === '}') {
-      return false;
-    }
-  }
+  // if val is in map
+    //if yes, push to cache
+  //else if val is equal to a right brackets  
+    //pop cache, check that val to see if it matches
+      //if not, return false
+  // if lenght cahche > 1 return false, else true;
 
 
-
-  return true;
+  // const lefty = '([{';
+  // const righty = ')]}';
+  // const obj = {'(':')', '[':']', '{':'}'};
+  // var newArr = [];
+  //
+  // for (var i = 0; i < input.length; i++) {
+  //   if (lefy.indexOf(input[i]) > -1 || righty.indexOf(input[i]) > -1) {
+  //     newArray.push(input[i]);
+  //   }
+  // }
+  //
+  // if (newArr.length % 2 !== 0) {
+  //   return false;
+  // }
+  //
+  // for (let k = 0; k < str.length; k++) {
+  //   if (str[k] === ')' || str[k] === ']' || str[k] === '}') {
+  //     return false;
+  //   }
+  // }
+  //
+  //
+  //
+  // return true;
 
 }
 
