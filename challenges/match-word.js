@@ -8,7 +8,13 @@
 // matchWord('');  -> true
 
 function matchWord(str) {
+  let map = {
 
+  }
+  
+  for (let i = 0; i < str.length; i += 1) {
+
+  }
 }
 
 module.exports = matchWord;
