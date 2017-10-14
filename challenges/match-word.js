@@ -8,7 +8,10 @@
 // matchWord('');  -> true
 
 function matchWord(str) {
+//find characters only in the str - look up regex
+//check the words for separated by space or punctuation - regex
 
 }
 
 module.exports = matchWord;
+

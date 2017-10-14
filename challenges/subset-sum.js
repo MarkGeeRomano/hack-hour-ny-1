@@ -10,6 +10,19 @@
 
 function subsetSum(array, target) {
 
+    let orderArr = array.sort((a,b) => {
+        return a - b
+      })
+    
+            let checkSum = 0
+            for(var i = 0; i < orderArr.length-1; i += 1) {
+                checkSum += orderArr[i]
+                if(checkSum === target) {
+                    return true
+                }
+            }
+             return false
+ 
 }
 
 module.exports = subsetSum;
