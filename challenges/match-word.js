@@ -25,4 +25,4 @@ return true;
 
 matchWord('__END_DNE-----'); 
 
-//module.exports = matchWord;
+module.exports = matchWord;
