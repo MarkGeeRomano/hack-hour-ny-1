@@ -9,7 +9,39 @@
  */
 
 function subsetSum(array, target) {
+//create accumulator variable
+let accumulator=0;
 
+//create an empty array	
+let newArray=[];
+
+//loop throuhg the array
+for (var i = 0; i < array.length; i++) {
+	
+
+	for (var j = i; j < array.length; j++) {
+		array[j]
+	
+		//add each element to the accumator
+		accumulator+=array[j];
+		//add each element to the newArray
+		newArray[j]=array[j];
+		//check if the accumulator is equal to the target
+		if( accumulator==target ){
+			//if  true than  return the newArray.
+			return newArray;
+		}else if(  accumulator > target)
+		{
+		//else if the accumulator is greater than the target
+		//set the 	accumulator to zero and empty out the newArray
+		accumulator=0;
+		newArray=[];
+
+		}
+	}
 }
+return false;
+}
+console.log( subsetSum([3, 7, 4, 2], 5) ); // - > true, 3 + 2 = 5
 
 module.exports = subsetSum;
