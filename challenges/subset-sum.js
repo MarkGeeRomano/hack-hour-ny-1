@@ -15,33 +15,45 @@ let accumulator=0;
 //create an empty array	
 let newArray=[];
 
-//loop throuhg the array
+//loop through the array
 for (var i = 0; i < array.length; i++) {
 	
 
 	for (var j = i; j < array.length; j++) {
-		array[j]
+		//console.log(array[j]);
 	
-		//add each element to the accumator
+		//add each element to the accumulator
 		accumulator+=array[j];
+		//console.log(accumulator);
 		//add each element to the newArray
-		newArray[j]=array[j];
+		newArray.push(array[j]);
 		//check if the accumulator is equal to the target
-		if( accumulator==target ){
+		if( accumulator===target ){
 			//if  true than  return the newArray.
 			return newArray;
 		}else if(  accumulator > target)
 		{
 		//else if the accumulator is greater than the target
 		//set the 	accumulator to zero and empty out the newArray
-		accumulator=0;
+		accumulator=array[i];
 		newArray=[];
+		newArray.push(array[i] );
 
 		}
 	}
 }
-return false;
+	if( accumulator===target){
+	return newArray;
+	}else{
+		console.log(newArray);
+		return false;
+	}
 }
-console.log( subsetSum([3, 7, 4, 2], 5) ); // - > true, 3 + 2 = 5
+//console.log( subsetSum([3, 7, 4, 2], 5) ); // - > true, 3 + 2 = 5
+//console.log( subsetSum([3, 34, 4, 12, 5, 12], 32) ); // -> true, 3 + 12 + 5 + 12 = 32
+//console.log( subsetSum([8, 2, 4, 12], 13) ); //-> false
+//console.log( subsetSum([8, -2, 1, -3], 6) ); //-> true, 8 + 1 + (-3) = 6
+
+
 
 module.exports = subsetSum;
