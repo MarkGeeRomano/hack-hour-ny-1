@@ -14,19 +14,18 @@
  */
 
 function binToDec(binary) {
-  const normal = binary.split('');
-  normal.pop();
-  normal.reverse().join('');
-  let toDecimal = Number(binary[binary.length - 1]);
+  let toDecimal = 0;
+  let power = 1;
 
-  for (let count = 1; count <= normal.length; count += 1) {
-    const num = normal[count - 1];
-    if (Number(num)) {
-      toDecimal += 2 ** count;
+  for (let count = binary.length - 2; count >= 0; count -= 1) {
+    const num = Number(binary[count]);
+    if (num) {
+      toDecimal += num * (2 ** power);
     }
+    power += 1;
   }
-  return toDecimal;
-}
 
+  return toDecimal + Number(binary[binary.length - 1]);
+}
 
 module.exports = binToDec;

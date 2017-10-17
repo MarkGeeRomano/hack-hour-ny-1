@@ -31,7 +31,8 @@ function kthToLastNode(k, head) {
   return valueCache[(count - (k)) + 1];
 }
 
-module.exports = { Node: Node, kthToLastNode: kthToLastNode };
+module.exports = { Node, kthToLastNode };
 
 
-// Any place where you find yourself usimg nested loops you can be fairly certain there is a better way to solve it.
+// Any place where you find yourself using nested loops you
+// can be fairly certain there is a better way to solve it.
