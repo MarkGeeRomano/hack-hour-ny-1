@@ -2,8 +2,27 @@
  * Given an array of integers, find the highest product you can get from three of the integers.
  */
 
+
 function highestProduct(array) {
-  let product = 0;
+  if (!Array.isArray(array) || array.length < 3) {
+    return 0;
+  }
+  let product = null;
+  for (let i = 0; i < array.length; i++) {
+    let num1 = array[i];
+    for (let j = i + 1; j < array.length; j++) {
+      let num2 = array[j];
+      for (let k = j + 1; k < array.length; k++) {
+        let num3 = array[k];
+        let currProd = num1 * num2 * num3
+        if (product === null || currProd > product) {
+          product = currProd;
+        }
+      }
+    }
+  }
+
+  return product;
 }
 
 
