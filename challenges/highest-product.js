@@ -3,7 +3,7 @@
  */
 
 function highestProduct(array) {
-
+  let product = 0;
 }
 
 
