@@ -5,6 +5,13 @@
 // [2,5,4,2] =  
 
 function highestProduct(array) {
+  if (array.includes(0)) {
+    if(array.length <= 3) return 0;
+    else {
+      array.splice(array.indexOf(0), 1);
+      console.log("array", array);
+    }
+  }
   let maxs = [];
   for (let count=0; count < 3; count++) {
     maxs.push(getMax(array));
