@@ -4,11 +4,11 @@
 
 function highestProduct(array) {
     let sorted = array.sort((a,b) => {
-      return b - a 
+      return Math.abs(b) - Math.abs(a) 
     })
     
     for(let i = 0 ;i < sorted.length; i += 1) {
-       return  sorted[0] * sorted[1] * sorted[2]
+       return  Math.abs(sorted[0]) * Math.abs(sorted[1]) * Math.abs(sorted[2])
       }
     }
 
