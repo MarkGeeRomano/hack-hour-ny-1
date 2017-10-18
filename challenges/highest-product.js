@@ -3,8 +3,14 @@
  */
 
 function highestProduct(array) {
-
-}
+    let sorted = array.sort((a,b) => {
+      return b - a 
+    })
+    
+    for(let i = 0 ;i < sorted.length; i += 1) {
+       return  sorted[0] * sorted[1] * sorted[2]
+      }
+    }
 
 
 module.exports = highestProduct;
