@@ -9,19 +9,7 @@
  */
 
 function subsetSum(array, target) {
-  let difference;
-  let targetNum = target;
-  for (var i = 0; i < array.length; i++) {
-    difference = targetNum - array[i];
-    // console.log('difference @i', i ,': --- ', difference);
-    if (difference < target && difference >= 0) targetNum -= array[i];
-    // console.log('target after @i', i ,': --- ', target);
-    // console.log('--------------')
-    if (targetNum === target) return true;
-  }
 
-  if (targetNum === 0) return true;
-  else return false;
 }
 
 module.exports = subsetSum;
