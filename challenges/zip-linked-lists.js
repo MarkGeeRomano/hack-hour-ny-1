@@ -11,6 +11,13 @@ function Node(val) {
 }
 
 function zip(l1, l2) {
+  if (l2 === null) {
+    return l1;
+  }
+  if (l1 === null) {
+    return l2;
+  }
+
   currNodel1 = l1;
   currNodel2 = l2;
   tempNode;
