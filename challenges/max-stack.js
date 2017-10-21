@@ -12,22 +12,22 @@ function Stack() {
   this.index = 0;
 }
 
-let newStack = new Stack;
+//let newStack = new Stack;
 // let max = null?;
 
-newStack.push = function(value) {
+Stack.push = function(value) {
   this.storage[this.index] = value;
   this.index++;
 }
 
-newStack.pop = function(value) {
+Stack.pop = function(value) {
   let popped = this.storage[this.index];
   delete this.storage[this.index];
   this.index--;
   return popped;
 }
 
-newStack.getMax = function() {
+Stack.getMax = function() {
   // let max = null
   // for (let i = )
 }
