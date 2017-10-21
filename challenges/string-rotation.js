@@ -16,14 +16,16 @@ function isSubstring(s1, s2) {
 }
 
 function stringRotation(s1, s2) {
-  if (s1 === s2) return true;
-  if (s1.length !== s2.length) return false;
-  let start = s2.indexOf(s1[0]);
-  for (var i = 0; i < s1.length; i++) {
-    if (start === s1.length) start = 0;
-    if (s1[i] !== s2[start]) return false;
-    start++;
-  }
-  return true;
+  // if (s1 === s2) return true;
+  // if (s1.length !== s2.length) return false;
+  // let start = s2.indexOf(s1[0]);
+  // for (var i = 0; i < s1.length; i++) {
+  //   if (start === s1.length) start = 0;
+  //   if (s1[i] !== s2[start]) return false;
+  //   start++;
+  // }
+  // return true;
+
+  return isSubstring(s1 + s1, s2);
 }
 module.exports = {isSubstring: isSubstring, stringRotation: stringRotation};
