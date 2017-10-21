@@ -12,19 +12,24 @@ function Stack() {
   this.index = 0;
 }
 
-Stack.prototype.push = function(value) {
+let newStack = new Stack;
+// let max = null?;
+
+newStack.push = function(value) {
   this.storage[this.index] = value;
   this.index++;
 }
 
-Stack.prototype.pop = function(value) {
+newStack.pop = function(value) {
   let popped = this.storage[this.index];
+  delete this.storage[this.index];
   this.index--;
   return popped;
 }
 
-Stack.prototype.getMax = function() {
-  
+newStack.getMax = function() {
+  // let max = null
+  // for (let i = )
 }
 
 module.exports = Stack;
