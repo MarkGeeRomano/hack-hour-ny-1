@@ -39,7 +39,7 @@ function highestProduct(array) {
 				if(array[k-2] * array[k-1] * array[k]   >  maxVar  ){
 					newArray[2]=array[k];
 					maxVar= array[k-2] * array[k-1] * array[k];
-
+					//console.log(maxVar);
 
 				}
 			}
@@ -53,6 +53,6 @@ function highestProduct(array) {
 return newArray;
 }
 
-//console.log( highestProduct([1,2,3,4,5,6]) );
+console.log( highestProduct([1,2,3,4,5,6,7]) );
 
-module.exports = highestProduct;
+//module.exports = highestProduct;
