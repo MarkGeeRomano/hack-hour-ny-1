@@ -25,7 +25,7 @@ function reverseLinkedList(head) {
 
     //then decrement nodeNum to get the next last and make it head of a new linkedList (while loop)
     while(nodeNum >= 0) {
-        for (let i = nodeNum; )
+        // for (let i = nodeNum;)
     }
     //return this.head of newLinkedList
 }
