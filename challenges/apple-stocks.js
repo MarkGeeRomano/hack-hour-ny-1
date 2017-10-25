@@ -14,15 +14,19 @@
 
 function bestProfit(stock_prices_yesterday) {
     let max = 0;
-    for (let i = 0; i < stock_prices_yesterday.length; i++) {
-      let stockP1 = stock_prices_yesterday[i];
-      for (let k = i+1; k < stock_prices_yesterday.length; k++) {
-        let stockP2 = stock_prices_yesterday[k];
-        if (stockP2 - stockP1 > max) {
-          max = stockP2 - stockP1;
+    if (Array.isArray(stock_prices_yesterday)){
+        for (let i = 0; i < stock_prices_yesterday.length; i++) {
+            let stockP1 = stock_prices_yesterday[i];
+            for (let k = i+1; k < stock_prices_yesterday.length; k++) {
+              let stockP2 = stock_prices_yesterday[k];
+              if (stockP2 - stockP1 > max) {
+                max = stockP2 - stockP1;
+              }
+            }
         }
-      }
+    
     }
     return max;
-  }
+}
+
 module.exports = bestProfit;
