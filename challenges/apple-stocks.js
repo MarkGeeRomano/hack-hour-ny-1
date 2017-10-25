@@ -19,24 +19,24 @@ function bestProfit(stock_prices_yesterday) {
 let s=stock_prices_yesterday;
 //console.log(stock_prices_yesterday);
 
-	let highestPriceIndex=0;
-	let highestPrice=0;
+	let lowestPriceIndex=0;
+	let lowestPrice=s[0];
 	let highestSale=0;
 
 for (var i = 0; i < s.length; i++) {
 	
-	if(s[i]>highestPrice){highestPrice=s[i] ; highestPriceIndex= i;}
+	if(s[i] <lowestPrice){lowestPrice=s[i] ; lowestPriceIndex= i;}
 }
-//console.log(highestPriceIndex)
-for (var i = highestPriceIndex+1; i < s.length; i++) {
+//console.log(lowestPriceIndex)
+for (var i = lowestPriceIndex+1; i < s.length; i++) {
 	
-	if( s[i]>  highestSale){ highestPrice=s[i]; highestSale= s[i]; }
+	if( s[i] >  highestSale){ lowestPrice=s[i]; highestSale= s[i]; }
 }
 
 //console.log(highestSale);
  return highestSale;
 }
-let ary=[25,  1,  2,  3,  4,  5,  6,  7,  8,  9,  24,  11, 12,  13,  14,  15,  16,  17,  18,  19,  20,  21,  22,  23];
+let ary=[25,  1,  2,  3,  4,  5,  6,  7,  8,  9,  24,  11, 12,  13,  14,  15,  16,  17,  18,  19,  20,  21,  22,  26];
 
 
 
