@@ -32,12 +32,11 @@ function bestProfit(stock_prices_yesterday) {
   for (let i = 0; i < stock_prices_yesterday.length-1; i += 1) {
     let bought = stock_prices_yesterday[i];
     let maxSold = Math.max(...stock_prices_yesterday.slice(i, stock_prices_yesterday.length));
-    console.log(maxSold);
     let diff = maxSold - bought;
+    
     if (diff > profit) {
       profit = diff;
     }
-
   }
   return profit;
 
