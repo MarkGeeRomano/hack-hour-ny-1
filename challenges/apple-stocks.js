@@ -13,7 +13,17 @@
  */
 
 function bestProfit(stock_prices_yesterday) {
-
+  if (stock_prices_yesterday === null || stock_prices_yesterday.length <= 1 || Array.isArray(stock_prices_yesterday) === false) return 0;
+  // best profit from 1 purchase = lowest price 
+  // 1 sale = highest price; 
+  let max;
+  let min;
+  stock_prices_yesterday.forEach(price => {
+    if (price > max || max === null) max = price;
+    if (price < min || min === null) min = price; 
+  });
+  let profit = max - min; 
+  return profit;
 }
 
 module.exports = bestProfit;
