@@ -31,11 +31,15 @@ function balancedParens(input){
   for (let i = 0; i < input.length; i++) {
     val = input[i];
     if(val in check) cache.push(val);
-    else if(val === ']' || val === '}' || val === ')')
-      if(check[cache.pop()] !== val) return false
+    else if (val === ']' || val === '}' || val === ')') {
+      if (check[cache.pop()] !== val) return false;
     }
   }
   return !cache.length;
 }
+
+console.log(balancedParens('[](){}')); // true
+console.log(balancedParens('[({})]'));   // true
+console.log(balancedParens('[(]{)}')); // false
 
 module.exports = balancedParens;
