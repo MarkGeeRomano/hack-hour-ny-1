@@ -8,6 +8,18 @@
 
 function Stack() {
   // body...
+  //create an array like collection
+  //allow a push method on it
+  this.storage = {};
+  this.length = 0;
 }
+Stack.prototype.push = function(val) {
+    this.storage[this.length] = val
+    this.length += 1
+    return this.storage.length
+}
+const stack1  = new Stack;
+
+
 
 module.exports = Stack;

@@ -14,7 +14,8 @@ function Node(value) {
 }
 
 function reverseLinkedList(head) {
-
+// Loop through the Linked list to find the lenght
+// 
 }
 
 module.exports = {Node: Node, reverseLinkedList: reverseLinkedList};
