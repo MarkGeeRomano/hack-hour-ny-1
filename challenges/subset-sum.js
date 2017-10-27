@@ -13,7 +13,7 @@ function subsetSum(array, target) {
   for (var i = 0; i < num[i]; i++) {
     var num1 = num[i];
     for (var g = 0; g < array.length; g++) {
-      array[g]
+      var num2 array[g]
     }
   }
 }
