@@ -27,14 +27,13 @@
 function balancedParens(input){
   let cached = [];
   let map = {'{':'}', '(':')', '[':']'}
-  let legend = ['{', '{', '('];
 
   for (var i = 0; i < input.length; i++) {
     if (map[input[i]]) {
       cached.push(map[i])
     } else if (map[cached[cached.length -1]] === input[i]) {
       cached.pop();
-    }vity
+    }
   }
   return !cached.length;
 }
