@@ -12,18 +12,26 @@
  *  Return 0 if no profit is possible OR if input is invalid.
  */
 
-function bestProfit(stock_prices_yesterday) {
-  if (stock_prices_yesterday === null || stock_prices_yesterday.length <= 1 || Array.isArray(stock_prices_yesterday) === false) return 0;
-  // best profit from 1 purchase = lowest price 
-  // 1 sale = highest price; 
-  let max;
-  let min;
-  stock_prices_yesterday.forEach(price => {
-    if (price > max || max === null) max = price;
-    if (price < min || min === null) min = price; 
-  });
-  let profit = max - min; 
-  return profit;
-}
+// Better Solution
+function bestProfit(stocks) {
+  //set a var to keep track of lowest price (index)
+  let lowI = 0;
+  //set a var to keep track of our highest profit (sum)
+  let maxProfit = 0;
+  //set a var to hold our potential profit
+  let potentialProfit;
+
+  //iterate through
+  for (let i = 0; i < stocks.length; i++) {
+    //check to see if price at i is lower than our lowest price 
+    //if it is, set that to lowest price
+    lowI = stocks[lowI] < stocks[i] ? lowI : i;
+    //subtract our price at i from our lowest price
+    potentialProfit = stocks[i] - stocks[lowI];
+    //if its greater than our highest profit, set our profit to that diff
+    maxProfit = potentialProfit > maxProfit ? potentialProfit : maxProfit;
+  }
+  return maxProfit
+};
 
 module.exports = bestProfit;
