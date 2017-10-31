@@ -11,6 +11,17 @@ function Node(val) {
 }
 
 function zip(l1, l2) {
+  //check our base cases (l1 and l2 are null?)
+  if (!l1) return l2;
+  if (!l2) return l1;
+  //with our value at l1, create a new node
+  const node = new Node(l1.value);
+  //set the next value of that node, to a zip(l2, l1.next)
+  node.next = zip(l2, l1.next);xz
+  return node;
+
+  //l1 = 1-2-3
+  //l2 = a-b
 };
 
 module.exports = {Node: Node, zip: zip};

@@ -9,24 +9,12 @@
  * mergeArrays(my_array, another_array); -> [1, 3, 4, 5, 6, 8, 10, 11, 12, 14, 15, 19, 21]
  * 
  * BONUS: 
- * Complete in O(n) time and O(n) space 
+ * Complete in O(n) time  
  *
  */
 
 function mergeArrays(arr1, arr2) {
-  if (Array.isArray(arr1) && Array.isArray(arr2)) {
-    if (arr1[0] > arr2[0]) {
-    arr3 = arr2.concat(arr1);
-    arr3.sort(function(a, b) {
-      return a-b;
-    })
-    return arr3;
-  }
-  arr3 = arr1.concat(arr2);
-  arr3.sort(function(a, b) {
-  return a-b});
-  }
-  return 0;
+
 }
 
 module.exports = mergeArrays;
