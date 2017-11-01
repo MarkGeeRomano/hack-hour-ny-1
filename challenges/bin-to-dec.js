@@ -12,9 +12,17 @@
  * Extension:
  * Write a function that converts a decimal number to binary (then maybe hexadecimal)
  */
-
 function binToDec(binary) {
+    //binToDec 0 => 0
+    const len = binary.length;
+    if(len === 1) return binary;
 
-}
+    let dec = 0;
+    const BASE = 2;
+    for (let i = 0; i < len; i++){
+      dec = dec + binary[i] * Math.pow(BASE,len-1-i);
+    }
+    return dec;
+  }
 
 module.exports = binToDec;

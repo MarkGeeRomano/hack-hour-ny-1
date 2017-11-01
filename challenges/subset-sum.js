@@ -7,22 +7,13 @@
  * subsetSum([8, 2, 4, 12], 13) -> false
  * subsetSum([8, -2, 1, -3], 6) -> true, 8 + 1 + (-3) = 6
  */
-
-function subsetSum(array, target) {
-
-    let orderArr = array.sort((a,b) => {
-        return a - b
-      })
-    
-            let checkSum = 0
-            for(var i = 0; i < orderArr.length-1; i += 1) {
-                checkSum += orderArr[i]
-                if(checkSum === target) {
-                    return true
-                }
-            }
-             return false
- 
-}
+function subsetSum(array,target){
+    //if we've reached zero, we've found a subset that adds up to our target
+    if(target === 0) return true;
+    //if we haven't reached 0, and the array we're passing in is empty, the given subset doesn't add up
+    else if(array.length === 0) return false;
+    //our "or" statement will return true if at any recursive point, a call to our function returns true
+    return subsetSum(array.slice(1), target - array[0]) || subsetSum(array.slice(1), target);
+  };
 
 module.exports = subsetSum;

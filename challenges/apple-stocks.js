@@ -13,7 +13,7 @@
  */
 // [1,2,4,9,3,10,4,7]
 
-function bestProfit(stock_prices_yesterday) {
+function bestProfit(stocks) {
 
 //set a var to keep track of lowest price (index)
 let lowI = 0;
