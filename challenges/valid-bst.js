@@ -13,16 +13,16 @@ function BinaryTree(val) {
 }
 
 function validBST(tree) {
-    let parent = tree;
+    let origin = tree;
     function isValid(tree) {
 
         if (tree.right === null && tree.left === null) {
             return true;
         }
-        if (tree.left.value > tree.value || tree.left.value > parent.value) {
+        if (tree.left.value > tree.value || tree.left.value > origin.value) {
             return false;
         }
-        if (tree.right.value < tree.value || tree.right.value < parent.value) {
+        if (tree.right.value < tree.value || tree.right.value < origin.value) {
             return false;
         }
         return validBST(tree.left) && validBST(tree.right);
