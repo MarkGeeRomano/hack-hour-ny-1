@@ -17,11 +17,25 @@ function twoSum(arr, n) {
 
 
 
-"dataEmpId":{}, 
-  "company":{},
-  "dataId":{},
-  "title":{},
-  "link":{},
-  "userApplication":[{}]
+/*"dataEmpId":"", 
+  "company":"",
+  "dataId":"",
+  "title":"",
+  "link":"",
+  "userApplication":[{}]*/
+
+/*
+
+const userSchema = new Schema({
+    nameFirst: ,
+    nameLast: ,
+    handle: ,
+    email: ,
+    password: ,
+    userApplications :[{type: Schema.Type.ObjectId, ref: 'userApplications'}]
+})
+*/
+
+
 
 module.exports = twoSum;
