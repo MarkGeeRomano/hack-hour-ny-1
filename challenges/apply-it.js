@@ -26,7 +26,14 @@
  */
 
 function applyIt(func, args) {
-
+  var obj = {func: func};
+  var str = "obj.func(";
+  for (var i=0; i<args.length; i++) {
+    str += (i?',':'') + "args["+i+"]";
+  }
+  
+  str += ");";
+  return eval(str);
 }
 
 module.exports = applyIt;
