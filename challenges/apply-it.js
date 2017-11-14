@@ -26,7 +26,10 @@
  */
 
 function applyIt(func, args) {
-
+  for(let i = 0; i < args; i += 1) {
+    console.log(args)
+  }
+  return func(args)
 }
 
 module.exports = applyIt;

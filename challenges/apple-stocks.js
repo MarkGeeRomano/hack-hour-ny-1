@@ -11,7 +11,7 @@
  *
  *  Return 0 if no profit is possible OR if input is invalid.
  */
-// [1,2,4,9,3,10,4,7]
+// [1,2,10,4]
 
 function bestProfit(stocks) {
 
@@ -26,10 +26,9 @@ let potentialProfit;
 for(let i = 0; i < stocks.length; i += 1) {
     //check to see if price at i is lower than our lowest price
     //if it is, set that to lowest price
-    //finding the lowest and comparing it to the highest
     lowI = stocks[lowI] < stocks[i] ? lowI : i;
     //subtract our price at i from our lowest price
-    potentialProfit = stocks[i]- stocks[lowI];
+    potentialProfit = stocks[i] - stocks[lowI];
     //if its greater than our highest profit, set our profit to that diff
     maxProfit = potentialProfit > maxProfit ? potentialProfit: maxProfit;
     }
