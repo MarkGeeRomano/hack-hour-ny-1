@@ -26,6 +26,6 @@ function countTwos(num) {
 	return count;
 }
 
-//console.log( countTwos( 100 ) );
+console.log( countTwos( 300 ) );
 //console.log( countTwos( 1000 ) );
-module.exports = countTwos;
+//module.exports = countTwos;
