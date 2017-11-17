@@ -145,4 +145,4 @@ bt.add(15);
 
 console.log(bt);
 
-module.exports = {BinaryTree: BinaryTree, superbalanced: superbalanced};
+//module.exports = {BinaryTree: BinaryTree, superbalanced: superbalanced};
