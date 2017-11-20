@@ -29,7 +29,7 @@ function mergeRanges(array) {
 	//use the first subIndex [[0]] of to compare against every element in the array
 			
 			if(array[ i ][ 0] <  array[ j ][ 0] ) {
-
+				
 			}else{
 
 			} 
