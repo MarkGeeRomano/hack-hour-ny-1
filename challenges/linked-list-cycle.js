@@ -40,8 +40,10 @@ function hasCycle(head) {
 		tmpNode = tmpNode.next;
 		//if the tmp node has been visited break
 		console.log(tmpNode.value)
-		if(   tmpNode.value in cache ){console.log("true");return true}
+		if(cache[tmpNode.value] == null){return false;}
+		if(   cache[tmpNode.value] ){console.log("true");return true}
 		cache[tmpNode.value] = true;
+		console.log(cache)
 		//else if not add to the cache
 		// then continue looping	
 		}
@@ -63,4 +65,4 @@ function hasCycle(head) {
 
 
 hasCycle(  )
-// module.exports = {Node: Node, hasCycle: hasCycle}
+ module.exports = {Node: Node, hasCycle: hasCycle}
