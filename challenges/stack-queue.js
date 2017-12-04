@@ -5,9 +5,9 @@
 
 function Stack() {
 
-	this.stack=new Array();
-	this.pop=function(){return this.stack.pop();};
-	this.push=function(item){this.stack.push(item)};
+	this.stack = new Array();
+	this.pop =function(){return this.stack.pop();};
+	this.push =  function(item){this.stack.push(item)};
 }
 
 
@@ -17,14 +17,14 @@ function Stack() {
 
 
 function Queue() {
-	this.stackPush=new Stack();
-	this.stackPop=new Stack();
-	this.enqueue=function(item){
+	this.stackPush = new Stack();
+	this.stackPop = new Stack();
+	this.enqueue = function(item){
 		this.stackPush.push(item);
 	};
-	this.dequeue=function(){
-		let sPush= this.stackPush;
-		let sPop= this.stackPop;
+	this.dequeue = function(){
+		let sPush = this.stackPush;
+		let sPop = this.stackPop;
 
 		if( sPop.top){
 			return sPop.pop();
