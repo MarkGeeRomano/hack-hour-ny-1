@@ -8,16 +8,20 @@
 
 
 function countTwos(num) {
+  // console.time('time complexity')
   let numCount = 0
   for(let i = 0; i <= num; i += 1) {
       let numStr = i + ''
+      // console.group('%c First level', 'background: #222; color: #bada55', i);
     if((numStr).indexOf('2') > -1) {
       for(let j = 0; j < numStr.length; j += 1) {
+        // console.group('Second level', numStr[j]);
         if(numStr[j] === '2')
         numCount += 1
       }
     }
   }
+  console.timeEnd('time complexity')
   return numCount
 }
 

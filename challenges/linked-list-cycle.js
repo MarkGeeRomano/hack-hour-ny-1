@@ -33,7 +33,8 @@ var Node = function(value) {
 }
 
 function hasCycle(head) {
-
+  //  create a map of nodes that was transversed 
+  //  travel through the linked list and store the nodes in the map
 }
 
 module.exports = {Node: Node, hasCycle: hasCycle}
