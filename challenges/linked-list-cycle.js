@@ -33,7 +33,27 @@ var Node = function(value) {
 }
 
 function hasCycle(head) {
-
+  for (let i = list, j = list.next; true; i = i.next, j = j.next.next) {
+    if (!j.next) return false;
+    if (i === j) return true;
+  }
 }
+
+// function cycle(list) {
+//   //the tortoise/turtle
+//   let i = list;
+//   //the hare
+//   let j = list.next;
+//   //as long as j.next exists, there's the possibility of a self-referencing linkedList
+//   while (j.next) {
+//     //if i is equal to j, we have a self-ref ll, so return true
+//     if (i === j) return true;
+//     //else set i to it's next value, and j to the next next value
+//     i = i.next;
+//     j = j.next.next;
+//   };
+//   //if j.next ever points to a null, we break out of our loop. this indicates a reg ll
+//   return false;
+// }
 
 module.exports = {Node: Node, hasCycle: hasCycle}
