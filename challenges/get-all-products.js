@@ -10,7 +10,8 @@
  */
 
 function getAllProducts(array) {
-  if (array === []) return 0;
+  if (array.length === 0) return 0;
+
   let allProd = [];
 
   for (let i=0; i < array.length; i++) {
