@@ -39,15 +39,17 @@ LinkedList.prototype.remove = function(val) {
   }
   
   let currNode = this.head;
-
-  while (currNode) {
+  let keepFind = true;
+  while (keepFind) {
     
     if (currNode.val === val) {
       currNode.prev.next = currNode.next;
       currNode.next.prev = currNode.prev;
+      console.log("this currNode.val", currNode.val)
+      return 
+      keepFind = false;
       // console.log('this is new currNode.prev.next', currNode.prev.next);
       // console.log('this is new currNode.next.prev', currNode.next.prev);
-      return;
     } else {
       currNode = currNode.next;
     }
