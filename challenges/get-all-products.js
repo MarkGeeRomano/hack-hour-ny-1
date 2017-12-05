@@ -10,7 +10,7 @@
  */
 
 function getAllProducts(array) {
-  if(!array) return array;
+  if(!array) return array[0];
   var newArr = [];
   for (var i = 0; i < array.length; i++){
     // console.log(array[i])
