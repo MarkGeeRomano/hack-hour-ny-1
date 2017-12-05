@@ -25,27 +25,26 @@
  */
 
 function balancedParens(input){
-//  filter out nonbracket characters from the input
-//  Open brackets have to come first
-//  Counter for both opening and closing brackets
-// if the open and close counter are even, return true
-let open = 0;
-let close = 0;
-
-for(var i = 0; i < input.length; i += 1) {
-    //if a closing bracket is found first, return false
-    if(input[i] === ')') return false;
-    //if an opening bracket, continue
-    if(input[i] === '(' || '{' || '[') {
-    //any opening brackets increase by 1
-    if(input[i] === '(' || '{' || '[') open += 1;
-    //any closing brackets increase by 1
-    if(input[i] === ')' || '{' || '[') close += 1;
-        }
-    }
-    //if the opening and closing increase equals
-    if(close === open) return true;
-    
-}
+    //create map
+    const map = { '{':'}','[':']','(':')' };
+    //instantiate cache
+    const cache = [];
+    let val;
+    //loop through input
+    for(let i = 0; i < input.length; i++){
+      //set a var to input[i]
+      val = input[i];
+      //check if val is in map
+      if(val in map) cache.push(val);
+        //if yes, push to cache
+      //else if val is equal to a right bracket
+      else if(val === ']' || val === '}' || val === ')')
+        //pop cache, check that val to see if it matches
+        //if not, return false
+        if(map[cache.pop()] !== val) return false
+      }
+    //if length cache > 1 return false, else true
+    return !cache.length;
+  }
 
 module.exports = balancedParens;

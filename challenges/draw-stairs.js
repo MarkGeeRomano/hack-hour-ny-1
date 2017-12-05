@@ -20,20 +20,22 @@ function drawStairs(n) {
 //   ****
 //  *****
 // ******
-let string = "";
-for (let i = 1 ; i <= n; i += 1) {
-    for (let spaces = 0; spaces < n-i ;spaces += 1) {
-        string+=" ";
-                    
-    }
-    for (let stars = 0; stars < i ; stars += 1) {
-        string += "*";
-    }
-    
-    console.log( string );
-    string = "";
-    }
-
+ //init empty String
+ let str = ``;
+ //init two vars, repping num * and num spaces
+ let numAst, numSpace;
+ //for loop, start at 1, i <= n, i++
+ for(let i = 1; i <= n; i++){
+   //set num of spaces to n - i
+   numSpace = n - i;
+   //set num of * to i
+   numAst = i;
+   //concat our string with those characters repeated, append \n
+   str += " ".repeat(numSpace) + `*`.repeat(numAst) + `\n`;
+   
+ };
+ 
+ console.log(str)
 }
 
 

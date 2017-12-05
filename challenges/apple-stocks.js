@@ -11,23 +11,28 @@
  *
  *  Return 0 if no profit is possible OR if input is invalid.
  */
+// [1,2,10,4]
 
-function bestProfit(stock_prices_yesterday) {
+function bestProfit(stocks) {
 
-// stock_prices_yesterday array of indices are the time in mins past trade time which was 9:30am
-// value are prices of apples at the moment
-// $500 at 10:30am, so stock_prices_yesterday[60] = 500;
+//set a var to keep track of lowest price (index)
+let lowI = 0;
+//set a var to keep track of highest profit(sum)
+let maxProfit = 0;
+//set a var to hold our potential profit
+let potentialProfit;
 
-// edge case, return 0 if highest value to sell and lowest value to offers no profit
-// edge case, return 0 if it's not an array or all values are negative
-// define a profit var for the calculated values in the array of the stock prices
-// loop through the array
-// finding the highest value to sell and the lowest value to buy, define vars for both to store
-    // compare lowest to the highest
-// return the profit is the difference between both vars
-// 
-
-
-}
+//iterate through
+for(let i = 0; i < stocks.length; i += 1) {
+    //check to see if price at i is lower than our lowest price
+    //if it is, set that to lowest price
+    lowI = stocks[lowI] < stocks[i] ? lowI : i;
+    //subtract our price at i from our lowest price
+    potentialProfit = stocks[i] - stocks[lowI];
+    //if its greater than our highest profit, set our profit to that diff
+    maxProfit = potentialProfit > maxProfit ? potentialProfit: maxProfit;
+    }
+    return maxProfit
+};
 
 module.exports = bestProfit;
