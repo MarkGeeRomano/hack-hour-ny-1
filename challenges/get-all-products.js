@@ -10,7 +10,28 @@
  */
 
 function getAllProducts(array) {
-
+  var newArr = [];
+  for (var i = 0; i < array.length; i++){
+    // console.log(array[i])
+    var prod = 1;
+    for (var j = 0; j < array.length; j++){
+      // console.log(array[j])
+      if (i === j){
+        prod *= 1
+      } else {
+        prod *= array[j]
+      }
+    }
+    newArr.push(prod)
+  }
+  return newArr
 }
+
+  
+
+// check to  see if product is in array
+// if not send product array
+// if it is in the array, break loop and return product array
+
 
 module.exports = getAllProducts;
