@@ -48,10 +48,11 @@ LinkedList.prototype.remove = function(val) {
         this.tail.next = null;
         keepFind = false;
         return;
-      }
-      currNode.prev.next = currNode.next;
-      currNode.next.prev = currNode.prev;
-      keepFind = false;
+      } else {
+        currNode.prev.next = currNode.next;
+        currNode.next.prev = currNode.prev;
+        keepFind = false;
+      } 
       // console.log("this currNode.val", currNode.val)
       // console.log('this is new currNode.prev.next', currNode.prev.next);
       // console.log('this is new currNode.next.prev', currNode.next.prev);
