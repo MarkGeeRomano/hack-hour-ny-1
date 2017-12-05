@@ -64,4 +64,4 @@ LinkedList.prototype.remove = function(val) {
 };
 
 
-module.exports 
+module.exports = LinkedList;
