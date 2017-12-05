@@ -43,11 +43,15 @@ LinkedList.prototype.remove = function(val) {
   while (keepFind) {
     
     if (currNode.val === val) {
+      if (currNode === this.tail) {
+        this.tail = this.tail.prev
+        this.tail.next = null;
+        keepFind = false;
+      }
       currNode.prev.next = currNode.next;
       currNode.next.prev = currNode.prev;
-      console.log("this currNode.val", currNode.val)
-      return 
       keepFind = false;
+      // console.log("this currNode.val", currNode.val)
       // console.log('this is new currNode.prev.next', currNode.prev.next);
       // console.log('this is new currNode.next.prev', currNode.next.prev);
     } else {
@@ -58,4 +62,4 @@ LinkedList.prototype.remove = function(val) {
 };
 
 
-module.exports = LinkedList;
+module.exports 
