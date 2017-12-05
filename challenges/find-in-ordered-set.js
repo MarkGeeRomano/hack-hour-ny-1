@@ -9,9 +9,13 @@ findInOrderedSet(nums, 2);  -> false
 
  */
 
-
-function findInOrderedSet(arr, target) {
-
+// BINARY SEARCH
+function findInOrderSet(arr, target) {
+  if(arr.length === 1) return arr[0] === target;
+  const ind = Math.floor(arr.length / 2);
+  if (target > arr[ind]) return findInOrderSet(arr.slice(ind + 1, arr.length), target);
+  else if (target < arr[ind]) return findInOrderSet(arr.slice(0, ind), target);
+  else return true;
 }
 
 
