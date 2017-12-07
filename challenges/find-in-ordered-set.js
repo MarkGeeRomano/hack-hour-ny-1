@@ -25,7 +25,7 @@ function findInOrderedSet(arr, target) {
 		let middle =arr[ middleindx ];
 	// check if that is the targer number
 	// if so return the number
-	if(  middle === targe  )return true
+	if(  middle === target  )return true
 
 		
 	// if it is more than the target number 
