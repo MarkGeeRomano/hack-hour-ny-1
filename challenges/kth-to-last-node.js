@@ -23,40 +23,48 @@ function Node(val) {
 
 function kthToLastNode(k, head) {
 
-	//create a counter
-	let count=1;
-
+	/*//create a counter
+	let count=0;
 	//create a tempNode to not change the original node
-	let tempNode=new Node();
-	tempNode=head;
-
+	 let tempNode = head;
 	//C(tempNode);
 	//loop through the array and count each element using i
 	while( tempNode.next){
-		tempNode=tempNode.next.next;
+		tempNode=tempNode.next;
 		count++;
 	}
 	//once you have reach null exit the loop
 	//subtract the intger from the count and store as diff
 	//C(count);
 	//C(tempNode)
-	let diff=count-k;
-
-	//create a new node call nn
-	let nn=new Node();
-
-
+	let diff = count-k;
 	//loop through the nodes again and from 0 to  diff
-	tempNode=head;
+	tempNode = head;
 	let j=0;
-	while(j <=count){
-		nn=tempNode.next;
+	while(j < diff){
+		tempNode = tempNode.next;
 		j++;
 	}
 	//make the nn = the node at when i has reached < the diff 
-	C(	nn.value)
-	return nn.value;
+	return tempNode.value;
 	//return the value of  the nn which is atthe kth to last node
+	*/
+	
+	let dis = 1;
+	let fastN = head;
+	let slowN = head;
+	while( dis < k ){
+		fastN = fastN.next;
+		dis++; 
+	}
+	//console.log(fastN);
+	//console.log(slowN);
+	while( fastN.next ){
+	fastN = fastN.next;
+	slowN = slowN.next;
+	} 
+	return slowN.value;
+
 }
 
   const a = new Node('A');
@@ -70,10 +78,8 @@ function kthToLastNode(k, head) {
   c.next = d;
   d.next = e;
  
-  kthToLastNode(2, a); //-> returns 'D' (the value on the second to last node)
+  console.log(kthToLastNode(5, a)); //-> returns 'D' (the value on the second to last node)
  
-function C(n){
-	console.log(n)
-}
+
 
 module.exports = {Node: Node, kthToLastNode: kthToLastNode};
