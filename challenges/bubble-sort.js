@@ -5,19 +5,22 @@
 
 
 function bubbleSort(array) {
-	let newArray = [];
-	let temp = array[0];
-	for (let i = 0; i < array.length; i++) {
-		array[i];
-		for (let j = 0; j < array.length; j++) {
-			if(array[j] > array[j+1] ){
-			/*temp = array[j+1];
-			newArray[j+1] = array[j];
-			newArray[j] = temp;*/
-			newArray =  array[j] 
-			}else{
+	let newArray = array;
+	//let temp = array[0];
+	for (let i = 0; i < newArray.length; i++) {
+		//array[i];
+		for (let j = 1; j < newArray.length; j++) {
+
+			if(newArray[j-1] > newArray[j] ){
+			temp = newArray[j-1];
+			newArray[j-1] = newArray[j];
+			newArray[j] = temp;
+			
+			console.log( "newArray[]",newArray[j-1] )
+			
+			}else{		
 			 
-			newArray[j] = array[j];
+			newArray[j-1] = newArray[j-1];
 			}
 			
 		}
