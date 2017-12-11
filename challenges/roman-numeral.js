@@ -17,34 +17,24 @@
  * 
  */
 
-function romanNumeral(n) {
-    //symbol appears after a larger or equal symbol, it is added
-    //symbol appears before a larger symbol, it is substracted
-    //Don't use same symbol more than 3x in a row
-    if(n < 1) return false
-    
-    const romans = {
-      M: 1000,
-      D: 500,
-      C: 100,
-      L: 50,
-      X: 10,
-      V: 5,
-      I: 1,
-    
-    }
-    
-    romanStr ='',
-    k = undefined;
-    for(k in romans) {
-      while( n >= romans[k]) {
-          console.log(romans[k])
-        romanStr += k
-        n -= romans[k]
-      }
-    }
-    return romanStr
-    
-    }
+function romanNumerals(n){
+  const map = [
+    1000, 'M', 900, 'CM', 500, 'D', 400, 'CD', 100, 'C', 90, 'XC', 50, 'L',
+    40, 'XL', 10, 'X', 9, 'IX', 5, 'V', 4, 'IV', 1, 'I'
+  ];
+  
+  let numeral = ``;
+  //iterate through our map, as long as i less length of map && n > 0, increment by 2
+  for(let i = 0; i < map.length && n > 0; i += 2){
+    //while value at curr index > n
+    while(map[i] <= n){
+      //add roman numberal value to numeral
+      numeral += map[i + 1];
+      //subtract map[i + 1] from n
+      n -= map[i];
+    };
+  };
+  return numeral
+};
 
 module.exports = romanNumeral;

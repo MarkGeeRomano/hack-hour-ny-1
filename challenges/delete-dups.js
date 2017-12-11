@@ -35,5 +35,61 @@ for(let i = head; i ; i = i.next) {
 }
 
 
+//Brandon's version
+
+function Node (val) {
+  this.value = val;
+  this.next = null;
+}
+
+const myLL = new Node (5);
+myLL.next = new Node (3);
+myLL.next.next = new Node (6);
+myLL.next.next.next = new Node (3);
+myLL.next.next.next.next = new Node (5);
+myLL.next.next.next.next.next = new Node (2);
+
+function printListVals (head) {
+  for (let currNode = head; currNode; currNode = currNode.next) {
+    console.log('value:', currNode.value);
+  }
+}
+console.log('This list is -->', printListVals(myLL));
+
+function deleteDups1 (head) {
+  // let firstNode = head;
+  // let preSecondNode = head.next;
+
+  for (let firstNode = head; firstNode.next; firstNode = firstNode.next) {
+    for (let preSecondNode = firstNode; preSecondNode.next; preSecondNode = preSecondNode.next) {
+      if (firstNode.value === preSecondNode.next.value) {
+        preSecondNode.next = preSecondNode.next.next;
+      }
+    }
+  }
+
+  return head;
+}
+
+function deleteDups2 (head) {
+  const cache = {}
+  cache[head.value] = true;
+  
+  for (let preNode = head; preNode.next; /* nothing here */) {
+    if (cache[preNode.next.value]) {
+      preNode.next = preNode.next.next;
+    } else {
+      cache[preNode.next.value] = true;
+      preNode = preNode.next;
+    }
+  }
+  
+  return head;
+}
+
+// console.log('deleted -->', printListVals(deleteDups1(myLL)));
+console.log('deleted -->', printListVals(deleteDups2(myLL)));
+
+
 
 module.exports = deleteDups;

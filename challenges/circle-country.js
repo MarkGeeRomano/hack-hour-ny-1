@@ -23,7 +23,11 @@
  */
 
 function circleCountry(x, y, r, start_x, start_y, end_x, end_y) {
-
-}
+return r.reduce((count,radius) => {
+  const start_dist = Math.hypot(start_x - x[i], start_y - y[i]); 
+  const end_dist = Math.hypot(end_x - x[i], end_y - y[i]);
+  return (start_dist < radius && end_dist > radius) || (start_dist > radius && end_dist < radius ? count + 1 : count)
+  }, 0);
+};
 
 module.exports = circleCountry;
