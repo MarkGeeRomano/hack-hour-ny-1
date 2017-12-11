@@ -62,9 +62,9 @@ function makePhoneBookObject(jazbook){
      ['travis','301-844-8505']
      ['jasmine','1800-974-4539'],
    ];
-console.log(jazbook[0][1]); // 1
-console.log(findName(jazbook, "jasmine") );
-console.log(makePhoneBookObject(jazbook) );
+console.log(jazbook[0]); // 1
+//console.log(findName(jazbook, "jasmine") );
+//console.log(makePhoneBookObject(jazbook) );
 
 const objectToExport = {
   findName,
