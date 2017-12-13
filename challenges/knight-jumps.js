@@ -11,7 +11,21 @@
 // var str = "(4 5)"
 
 function knightjumps(str) {
+  let position = [Number(str[1]), Number(str[3])];
+  let offset = [-1, -2, 1, 2];
+  let moves = 0
+  for (let i = 0; i < offset.length; i += 1) {
+    if (position[0] + offset[i] >= 1 && position[0] + offset[i] <= 8) {
+      let y = position[1] + offset[(i + 1) % offset.length];
+      if (y >= 1 && y <= 8) moves++;
+    }
 
+    if (position[1] + offset[i] >= 1 && position[1] + offset[i] <= 8) {
+      let x = position[0] + offset[(i + 1) % offset.length];
+      if (x >= 1 && x <= 8) moves++;
+    }
+  }
+  return moves;
 }
 
 module.exports = knightjumps;
