@@ -11,7 +11,34 @@
 // var str = "(4 5)"
 
 function knightjumps(str) {
+  // count = 8;
+  let count=0;
+  let x = Number(str[1]);
+  let y = Number(str[3])
 
+  
+  if (x -2 > 0) {
+    if (y+1 <=8) count++;
+    if (y-1>0) count++;
+    console.log("hit first")
+  }
+  if (x-1 >0) {
+    if (y+2 <=8) count++;
+    if (y-2 >0) count++;
+        console.log("hit second")
+  }
+  if (x+1 <=8) {
+    if (y+2 <=8) count++;
+    if (y-2 >0) count++;
+        console.log("hit third")
+  }
+  if (x+2 <=8) {
+    if (y+1<=8) count++;
+    if (y-1 >0) count++
+        console.log("hit fourth")
+  }
+  
+  return count;
 }
 
 module.exports = knightjumps;
