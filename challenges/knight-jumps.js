@@ -10,23 +10,27 @@
 //  example input:
 // var str = "(4 5)"
 
-function knightjumps(str) {
-  let position = [Number(str[1]), Number(str[3])];
-  let offset = [-1, -2, 1, 2];
-  let moves = 0
-  for (let i = 0; i < offset.length; i += 1) {
-    if (position[0] + offset[i] >= 1 && position[0] + offset[i] <= 8) {
-      let y = position[1] + offset[(i + 1) % offset.length];
-      if (y >= 1 && y <= 8) moves++;
-    }
-
-    if (position[1] + offset[i] >= 1 && position[1] + offset[i] <= 8) {
-      let x = position[0] + offset[(i + 1) % offset.length];
-      if (x >= 1 && x <= 8) moves++;
-    }
-  }
-  
-  return moves;
+function insideBoard(position) {
+  return (position >= 1 && position <= 8);
 }
 
+function knightjumps(str) {
+  let x = Number(str[1]), y = Number(str[3]);
+  return [-1, -2, 1, 2].reduce((moves, offset, i, arr) => {
+
+    if (insideBoard(x + offset)) {
+      if (insideBoard(y + arr[(i + 1) % arr.length])) {
+        moves++;
+      }
+    }
+
+    if (insideBoard(x + arr[(i + 1) % arr.length])) {
+      if (insideBoard(y + offset)) {
+        moves++;
+      }
+    }
+
+    return moves;
+  }, 0);
+}
 module.exports = knightjumps;
