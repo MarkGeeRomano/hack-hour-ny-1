@@ -10,7 +10,7 @@
 *     ['travis','301-844-8505']
 *     ['jasmine','1800-974-4539'],
 *   ];
-*
+*         
 * jazbooks are not always sorted...
 *
 * Develop a function that takes in a jazbook and a name, searches through the jazbook and
@@ -26,12 +26,20 @@
 
 //  return the number associated with the name in the jazbook
 function findName(jazbook, name) {
-
+  for (let f = 0, let b = jazbook.length - 1; f < Math.ceil((jazbook.length)/2); f++, b--) {
+    if (jazbook[f][0] === name) return jazbook[f][1];
+    if (jazbook[b][0] === name) return jazbook[b][1];
+    if (jazbook[f][1] === name) return jazbook[f][0];
+    if (jazbook[b][1] === name) return jazbook[b][0];
+  }
+  return false;
 }
+// best case: O(n/2)
+
 
 // return an object literal representing the jazbook
 function makePhoneBookObject(jazbook){
-
+  
 }
 
 const objectToExport = {

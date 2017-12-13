@@ -17,8 +17,11 @@
  * 	 
  */
 
-function newIntersections(x, y){
+function newIntersections(x, y) {
+  // let cache = {};
+  // for (let i = 0; i < x.length; i++) {
 
+  // }
 }
 
 module.exports = newIntersections;

@@ -5,27 +5,31 @@
 
 
 function bubbleSort(array) {
-  let temp;
-  let count = array.length - 1;
-  let i = 0;
-  while (count !== 0) {
-    if (array[i] > array[i + 1]) {
-      if (i !== (array.length - 1)) {
-        // [i, i + 1] = [i + 1, i];
-        temp = array[i];
-        array[i] = array[i + 1];
-        array[i + 1] = temp;
+  // swapped
+  let swapped = true;
+  // last ind 
+  let lastInd = array.length - 1;
+  // while loop check swapped and last ind
+  while (swapped && lastInd > 0) {
+    // reset swapped val
+    swapped = false;
+    // iterate through our sub array
+    for (let i = 0; i < lastInd; i += 1) {
+      // compare our values
+      if (array[i] > array[i + 1]) {
+        // swapp our values
+        [array[i], array[i + 1]] = [array[i + 1], array[i]];
+        // set swapped to true
+        swapped = true;
       }
     }
-
-    // if not at the end
-    i += 1;
-    if (i === (count)) { // if we're at the last index (i + 1)
-      i = 0;
-      count -= 1;
-    }
+    // decrement last ind
+    lastInd--;
   }
+  // return 
   return array;
 }
+
+console.log(bubbleSort([1, 2, 9, 8, 10, 12, 4, 3, 6]));
 
 module.exports = bubbleSort;
