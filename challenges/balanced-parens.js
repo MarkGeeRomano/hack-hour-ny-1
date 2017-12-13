@@ -25,7 +25,21 @@
  */
 
 function balancedParens(input){
-
+  input = input.replace(/\w/g, ''); // keeps all non-word letters
+  const check = { '{':'}','[':']','(':')' }
+  const cache = [];
+  for (let i = 0; i < input.length; i++) {
+    val = input[i];
+    if(val in check) cache.push(val);
+    else if (val === ']' || val === '}' || val === ')') {
+      if (check[cache.pop()] !== val) return false;
+    }
+  }
+  return !cache.length;
 }
+
+console.log(balancedParens('[](){}')); // true
+console.log(balancedParens('[({})]'));   // true
+console.log(balancedParens('[(]{)}')); // false
 
 module.exports = balancedParens;

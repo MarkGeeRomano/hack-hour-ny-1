@@ -17,8 +17,8 @@ function Node(val) {
   this.next = null;
 }
 
-function addLinkedList(l1, l2) {
-
+function addLinkedList(l1, l2) { // done with recursion
+// function (addLinkedList(l1.next, l2.next));
 }
 
 module.exports = {Node: Node, addLinkedList: addLinkedList};

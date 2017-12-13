@@ -13,7 +13,11 @@
   */
 
 function anagrams(string) {
+  let array = {}; 
+  let frequency = string.length; 
 
+  while (count < )
+  for (let i = 0; i < )
 }
 
 module.exports = anagrams;

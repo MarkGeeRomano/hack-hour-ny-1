@@ -13,7 +13,7 @@
  * c.next = d;
  * d.next = e;
  *
- * kthToLastNode(2, a); -> returns 'D' (the value on the second to last node)
+ * kthToLastNode(2, a); -> returns 'D' (the value on the second to last node) ------- length - k = i + 1;
  */
 
 function Node(val) {
@@ -22,7 +22,16 @@ function Node(val) {
 }
 
 function kthToLastNode(k, head) {
+  let length = 1;
+  for (let current = head; current; current = current.next) {
+    length++;
+  }
 
+  let targetIndex = length - k;
+  let count = 0;
+  for (let current = head; current; current = current.next) {
+    if (++count === targetIndex) return current.value;
+  }
 }
 
 module.exports = {Node: Node, kthToLastNode: kthToLastNode};

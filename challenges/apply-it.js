@@ -14,7 +14,7 @@
  *       return "We don't know how old " + name + " is!";
  *     }
  *
- *     else{
+ *     else{q
  *       return name + " is " + age + " years old!";
  *     }
  *   };
@@ -26,7 +26,14 @@
  */
 
 function applyIt(func, args) {
-
+  //begin the string that represents a call to your callback
+  let appliedFunc = `func(`;
+  //create an array of strings that represent each item in your args array
+  const mappedArgs = args.map((_, i) => `args[${i}]`);
+  //join the array of strings with a `,`, add them to first string, and close it off with a closing paren
+  appliedFunc += mappedArgs.join(',') + `)`;
+  //return an anon function that uses eval to evaluate the string
+  return () => eval(appliedFunc);
 }
 
 module.exports = applyIt;
