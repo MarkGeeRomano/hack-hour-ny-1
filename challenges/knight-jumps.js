@@ -86,5 +86,10 @@ function bothInRange(x, y){
 }
 
 knightjumps( "(4 5)" );
+knightjumps( "(0 7)" );
+knightjumps( "(0 0)" );
+knightjumps( "(7 0)" );
+knightjumps( "(7 7)" );
+knightjumps( "(3 4)" );
 
 module.exports = knightjumps;
