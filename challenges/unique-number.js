@@ -9,8 +9,11 @@
  * Complete the challenge in O(1) space
  *
  */
-function uniqueNumber(array) {
 
+ /* exclusive or : two ways -> bit wise & logical. This is bit wise exclusive or: */ 
+
+function uniqueNumber(array) {
+  return array.reduce((accm, curr) => accm ^ curr);
 }
 
 module.exports = uniqueNumber;

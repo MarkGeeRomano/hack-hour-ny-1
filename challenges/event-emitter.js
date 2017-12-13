@@ -25,12 +25,15 @@ function EventEmitter() {
 
 }
 
-EventEmitter.prototype.on = function(funcName, func) {
+EventEmitter.prototype.on = function (funcName, func) {
+  //check if property exists. if no, set it to an array with callback passed in
+  if (!this[funcName]) this[funcName] = [func];
+  //if so, push in the callback to the existing aray
+  else this[funcName].push(func);
+}
 
-};
-
-EventEmitter.prototype.trigger = function(funcName, ...args) {
-
-};
-
+EventEmitter.prototype.trigger = function (funcName, ...args) {
+  //check if that property exists, if so, iterate through the array and pass in the ...args to each func 
+  if (this[funcName]) this[funcName].forEach(func => func(...args));
+}
 module.exports = EventEmitter;
