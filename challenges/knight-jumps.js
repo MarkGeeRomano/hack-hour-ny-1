@@ -25,6 +25,7 @@ function knightjumps(str) {
       if (x >= 1 && x <= 8) moves++;
     }
   }
+  
   return moves;
 }
 
