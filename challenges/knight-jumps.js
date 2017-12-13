@@ -13,23 +13,77 @@
 // var str = "(4 5)"
 
 function knightjumps(str) {
+	//console.log(str)
 	let counter = 0 ;
+	let numberOfPermittedSpaces = 0;
 	//trim string
 	let trimmedString = str.slice( 1, -1 );
+	//console.log(trimmedString)
 	let array = trimmedString.split(" ").map(Number);
+	//console.log("array",array)
+	//console.log("number of p spaces", numberOfPermittedSpaces)
 
+	let x = array[0];
+	let y = array[1];
 
+	/*console.log(x)
+	console.log(y)*/
+	if( inRange(x) ){
+      //console.log("x",true) ;
+    }
+	else{
+	  console.log("x",false);
+	}
 
-	console.log( array )
-
+	if( inRange(y) ){
+      //console.log("y",true)
+    }
+	else{
+	  console.log("y",false);
+	}
+	
+	//console.log("number of p spaces", numberOfPermittedSpaces)
+	//update the numberOfPermittedSpaces
 	//check for cases
-	//check
 
+	//case 1
+	if(   bothInRange((y+2), (x+1)) ) numberOfPermittedSpaces++;
+	//case 2
+	if( bothInRange((y +1 ), (x +2 )) )numberOfPermittedSpaces++;
+	//case 3
+	if( bothInRange((y -1 ), (x +2 )) )numberOfPermittedSpaces++;
+	//case 4
+	if( bothInRange((y -2 ), (x +1 )) )numberOfPermittedSpaces++;
+	//case 5
+	if( bothInRange((y -2 ), (x -1 )) )numberOfPermittedSpaces++;
+	//case 6
+	if( bothInRange((y -1 ), (x -2 )) )numberOfPermittedSpaces++;
+	//case 7 
+	if( bothInRange((y  +1), (x -2 )) )numberOfPermittedSpaces++;
+	//case 8
+	if( bothInRange((y  +2), (x -1 )) )numberOfPermittedSpaces++;
+
+//I can get this done.
+
+
+
+	
+	console.log("numberOfPermittedSpaces",numberOfPermittedSpaces)
+	return numberOfPermittedSpaces;
 
 
 
 }
 
+function inRange(num){
+	if( num <0 || num >7 )return false;
+	return true;
+}
+
+function bothInRange(x, y){
+	if( inRange(x) && inRange(y) )return true;
+	return false;
+}
 
 knightjumps( "(4 5)" );
 
