@@ -12,10 +12,10 @@
 
 function knightjumps(str) {
   return str.replace(/\(|\)/g, '').split(' ').reduce((acc, curr) => {
-    if (curr == 1) acc -= 2;
+    if (curr == 1) acc -= 4;
     if (curr == 2) acc -= 2;
     if (curr == 7) acc -= 2;
-    if (curr == 8) acc -= 2;
+    if (curr == 8) acc -= 4;
     return acc;
   }, 8);
 }
