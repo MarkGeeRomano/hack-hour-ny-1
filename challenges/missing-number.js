@@ -25,7 +25,14 @@ Challange:
   ** cannot use additional storage, variables are okay not any TYPE of object
   ** keep in mind time complexity
 */
-function missingNum(Array) {
+function missingNum(array) {
+  const sorted = array.sort();
+  const offset = sorted[0];
+  for (let i = 0; i < sorted.length; i += 1) {
+    if ((sorted[i] - i) !== offset) {
+      return sorted[i] - 1;
+    }
+  }
 }
 
 module.exports = missingNum;
