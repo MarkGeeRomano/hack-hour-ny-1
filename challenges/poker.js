@@ -20,7 +20,11 @@
  * BONUS2: Create a deck of cards function that generates two random hands for you.
  */
 function poker(hand1, hand2) {
-
+  let h1 = {hand: 0, highest: 0, count: 0, last: 0};
+  let h2 = {hand: 0, highest: 0, count: 0, last: 0};
+  hand1.forEach((card, i) => {
+    
+  })
 }
 
 module.exports = poker;

@@ -25,7 +25,18 @@ Challange:
   ** cannot use additional storage, variables are okay not any TYPE of object
   ** keep in mind time complexity
 */
+
+// possibilites:
+  // (1) sort array first o(n)
+  // (1) then loop through array again to see if the next is exactly after
+  // (1) => but this would be worse case O(2N) -- will refractor after 
+
 function missingNum(Array) {
+  return array.sort((a, b) => a - b).forEach((num, i) => {
+    if (num !== i + 1) {
+      return i + 1; 
+    }
+  })
 }
 
 module.exports = missingNum;
