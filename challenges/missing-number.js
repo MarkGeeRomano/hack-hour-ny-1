@@ -26,9 +26,11 @@ Challange:
   ** keep in mind time complexity
 */
 function missingNum(array) {
-  const sorted = array.sort();
+  const sorted = array.sort((a,b) => {
+    return a-b;
+  });
   const offset = sorted[0];
-  for (let i = 0; i < sorted.length; i += 1) {
+  for (let i = 1; i < sorted.length; i += 1) {
     if ((sorted[i] - i) !== offset) {
       return sorted[i] - 1;
     }
