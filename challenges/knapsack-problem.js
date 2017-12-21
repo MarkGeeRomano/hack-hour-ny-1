@@ -25,7 +25,8 @@ function solveKnapsack(items, weightAvailable) {
 	    currentValue = currentValue + items[i].value;	
 	   }else{
 		// 	if not then return the value count
-	   	return currentValue;
+	   	 currentValue;
+	   	 continue;
 	   }
 
 	// 	if the weight has exceeded then return the current value count
