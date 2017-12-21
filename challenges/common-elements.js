@@ -49,7 +49,7 @@ function commonElements(array1, array2, array3, array4){
     cacheLen++;
   }
 
-  return result;
+  result ? result : "Nothing in Common!"
 }
 
 module.exports = commonElements;
