@@ -13,7 +13,45 @@
 // if there are no common numbers or strings return the string "Nothing in Common!"
 
 function commonElements(array1, array2, array3, array4){
+	//merge all arrays in one
+	let allArrays = []
 
+	allArrays.push(array1);
+	allArrays.push(array2);
+	allArrays.push(array3);
+	allArrays.push(array4);
+    
+    //declare an empty array
+	let newArray = [];
+
+	//go through element and check element from one array againts each element from another array
+	
+	let endResult = allArrays.reduce(function(newAccArry, eachArry, index , allArrays ){
+		
+	  for (let i = 0; i < allArrays.length; i++) {
+	  	//if i matches the the index will avoid searching in this scenario. and continue to the next array
+  		if( i === index ){ 
+  		  continue
+  		}
+		 		
+		//go through eveysub array and check for a match
+  		for (let j = 0; j < allArrays[i].length; j++) {
+	    //if they have a match then push it into a new array
+  			if( eachArry[i]  ===  allArrays[i][j] )
+	  		newAccArry.push(eachArry[i]);
+	    //if they don't match continue to the next element
+  		}
+ 
+	  }
+
+	});
+
+	
+	//if the new array has a length bigger than 1 return the newarray
+	if(  endResult.lengt > 1 ) return endResult;
+
+    // otherwise return nothing in commin as a defautlt result
+	return "Nothing in Common!";
 }
 
 module.exports = commonElements;
