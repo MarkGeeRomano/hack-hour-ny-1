@@ -12,8 +12,44 @@
 
 // if there are no common numbers or strings return the string "Nothing in Common!"
 
-function commonElements(array1, array2, array3, array4){
 
+function commonElements(array1, array2, array3, array4){
+  //RETURN AN ARRAY WITH ELEMENTS THAT ALL FOUR ARRAYS HAVE
+  
+  //create a cache = []
+  let cache = {};
+  array1.map((a) => cache[a] = a);
+  let newArr = Object.values(cache);
+  
+  // console.log(newArr)
+  
+  let cacheLen = 0;
+  let result = [];
+  //iterate over cache if array2, 3, 4 doesn't have it, pop it
+
+  // console.log(array2.indexOf(12))  
+  //console.log(array3.indexOf(12))  
+  //console.log(array4.indexOf(12))  
+  //console.log(array2.indexOf(12))  
+  
+  while (cacheLen < newArr.length) {
+    // console.log('index', cacheLen);
+    // console.log('this is the element at hand ===>', newArr[cacheLen]);
+    // console.log('this is the typeof element at hand ===>', typeof newArr[cacheLen]);
+    // console.log(array2.indexOf(newArr[cacheLen]))  
+    // console.log(array3.indexOf(newArr[cacheLen]))  
+    // console.log(array4.indexOf(newArr[cacheLen]))  
+    // console.log('________________________________________');
+    
+    if ((result.indexOf(newArr[cacheLen]) === -1) && (array2.indexOf(newArr[cacheLen]) > -1) && (array3.indexOf(newArr[cacheLen]) > -1) && (array4.indexOf(newArr[cacheLen]) > -1)) {
+
+      result.push(newArr[cacheLen]);
+      // console.log(newArr[cacheLen])
+    }
+    cacheLen++;
+  }
+
+  return result;
 }
 
 module.exports = commonElements;
