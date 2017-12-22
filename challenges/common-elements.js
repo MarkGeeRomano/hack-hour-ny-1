@@ -38,7 +38,7 @@ function commonElements(array1, array2, array3, array4){
   		for (let j = 0; j < allArrays[i].length; j++) {
 	    //if they have a match then push it into a new array
   			if( eachArry[i]  ===  allArrays[i][j] )
-	  		newAccArry.push(eachArry[i]);
+	  		 newArray[i]=[eachArry[i]];
 	    //if they don't match continue to the next element
   		}
  
@@ -53,5 +53,11 @@ function commonElements(array1, array2, array3, array4){
     // otherwise return nothing in commin as a defautlt result
 	return "Nothing in Common!";
 }
+
+  var array1 = [1,4,6,7,'ferret',12,12,99,2000,'dog','dog',99,1000];
+  var array2  = [15,9,9,'ferret',9,26,12,12,'dog'];
+  var array3 = [23,12,12,77,'ferret',9,88,100,'dog'];
+  var array4 = ['ferret',12,12,45,9,66,77,78,2000];
+console.log(commonElements(array1, array2, array3, array4  ) )
 
 module.exports = commonElements;
