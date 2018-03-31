@@ -85,6 +85,7 @@ Adds a node to the end of the list
 LinkedList.prototype.add = function(val) {
   //create new node
   const node = new Node(val);
+  
   //check if theres no head
   if(!this.head){
     //if so set head and tail to new node
