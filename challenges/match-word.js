@@ -33,7 +33,7 @@ function matchWord(str) {
   };
   //return the length of the cache
   return !cache.length;
-}
+};
 
 module.exports = matchWord;
 
