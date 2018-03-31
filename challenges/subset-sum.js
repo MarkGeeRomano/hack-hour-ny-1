@@ -13,7 +13,11 @@ function subsetSum(array,target){
   //if we haven't reached 0, and the array we're passing in is empty, the given subset doesn't add up
   else if(array.length === 0) return false;
   //our "or" statement will return true if at any recursive point, a call to our function returns true
+  console.log(array.slice(1), target)
+  //first value included, first value not included
+
   return subsetSum(array.slice(1), target - array[0]) || subsetSum(array.slice(1), target);
 };
 
-module.exports = subsetSum;
+// module.exports = subsetSum;
+subsetSum([3, 7, 4, 2], 5)

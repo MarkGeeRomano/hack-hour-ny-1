@@ -17,20 +17,20 @@
  * 
  */
 
-function romanNumerals(n){
+function romanNumerals(input){
   const map = [
     1000, 'M', 900, 'CM', 500, 'D', 400, 'CD', 100, 'C', 90, 'XC', 50, 'L',
     40, 'XL', 10, 'X', 9, 'IX', 5, 'V', 4, 'IV', 1, 'I'
   ];
   
   let numeral = ``;
-  //iterate through our map, as long as i less length of map && n > 0, increment by 2
+  //iterate through our map, as long as i less length of map && input > 0, increment by 2
   for(let i = 0; i < map.length && n > 0; i += 2){
-    //while value at curr index > n
+    //while input is larger than the number value
     while(map[i] <= n){
-      //add roman numberal value to numeral
+      //add roman numberal value .e.g 'M' by [i+1] because roman numeral are always in second from the numbers
       numeral += map[i + 1];
-      //subtract map[i + 1] from n
+      //subtract map[i] ('number') from input
       n -= map[i];
     };
   };

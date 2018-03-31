@@ -16,13 +16,17 @@
 function reverseInPlacePoorly(arr){
   //iterate through arr backward, push value at i to end
   let val;
-  for(let i = arr.length - 1; i >= 0; i--){
+  // Linear n
+  for(let i = arr.length - 1; i >= 0; i--){ 
     //set var to val at i, then push
     val = arr[i];
     arr.push(val);
   };
   //we can use splice to trim off the first half of our original array and return the second half
-  return newArr = arr.splice(arr.length / 2);
+  // Linear 2n
+  newArr = arr.splice(arr.length / 2);
+  return newArr;
+  // 3n steps 
 };
 
 function reverseInPlaceGoodly(arr){
@@ -30,11 +34,14 @@ function reverseInPlaceGoodly(arr){
   const until = Math.floor(arr.length / 2);
   //iterate through until
   let left,right;
+  //Linear n
   for(let i = 0; i < until; i++){
     //store the mirrored values
     left = arr[i];
+    // 0,1,2... substracting index from the end
     right = arr[arr.length - 1 - i];
     //set the value at the mirrored indexes to their mirrored value
+    // SWAP
     arr[i] = right;
     arr[arr.length - 1 - i] = left;
   };

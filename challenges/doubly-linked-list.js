@@ -45,6 +45,7 @@ LinkedList.prototype.remove = function(val) {
     let nodeExist = true;
     while(nodeExist) {
       if(currNode.val === val) {
+        //The value is the tail
           if(!currNode.next) {
             currNode.prev.next = null;
             this.tail = currNode.prev;
@@ -52,6 +53,7 @@ LinkedList.prototype.remove = function(val) {
             return this.head
           }
           else {
+          //Somewhere in between
           currNode.prev.next = currNode.next;
           currNode.next.prev = currNode.prev;
           nodeExist = false;
