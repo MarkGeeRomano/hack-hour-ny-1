@@ -8,24 +8,24 @@ function highestProduct(array) {
     array.sort((a, b) => a - b);
     console.log(array);
 
-    if (array[0] < 0 && array[1] < 0 && array.length > 3) {
-        let end3Product = highestProduct(array.slice(-3))
-        if ((array[0] * array[1] * array[array.length - 1]) > end3Product) {
-            // let last = array.pop();
-            // array = array.slice(0, 2);
-            // array.push(last);
-            // return highestProduct(array);
-            return array[0] * array[1] * array[array.length - 1];
-        }
+    const end3Product = highestProduct(array.slice(-3));
+    const front3ishProduct = (array[0] * array[1] * array[array.length - 1]);
+    if (front3ishProduct > end3Product) {
+        // let last = array.pop();
+        // array = array.slice(0, 2);
+        // array.push(last);
+        // return highestProduct(array);
+        return front3ishProduct;
     }
+
     return end3Product;
 }
 
-// console.log('arr = [-1, 2, 3]        >> ', highestProduct([-1, 2, 3]), '    ---- should be -6');
+console.log('arr = [-1, 2, 3]        >> ', highestProduct([-1, 2, 3]), '    ---- should be -6');
 console.log('arr = [-5, 11, -1, 1]   >> ', highestProduct([-5, 11, -1, 1]), ' ---- should be 55');
-// console.log('arr = [-5, 11, -1, -10] >> ', highestProduct([-5, 11, -1, -10]), '---- should be 550');
-// console.log('arr = [-5, 0, -1, -10]  >> ', highestProduct([-5, 0, -1, -10]), '  ---- should be 0');
-// console.log('arr = [-5, 0, 5, 10]    >> ', highestProduct([-5, 0, 5, 10]), '    ---- should be 0');
+console.log('arr = [-5, 11, -1, -10] >> ', highestProduct([-5, 11, -1, -10]), '---- should be 550');
+console.log('arr = [-5, 0, -1, -10]  >> ', highestProduct([-5, 0, -1, -10]), '  ---- should be 0');
+console.log('arr = [-5, 0, 5, 10]    >> ', highestProduct([-5, 0, 5, 10]), '    ---- should be 0');
 
 // function highestProduct(arr) {
 //     if (Array.isArray(arr) === false || arr.length < 3) return 0;
