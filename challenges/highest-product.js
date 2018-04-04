@@ -2,31 +2,35 @@
  * Given an array of integers, find the highest product you can get from three of the integers.
  */
 
-function highestProduct(array, firstTime = 0) {
+function highestProduct(array) {
     if (Array.isArray(array) === false || array.length < 3) return 0;
     if (array.length === 3) return array.reduce((product, num) => product * num);
-    if (firstTime === 0) array.sort((a, b) => a - b);
+    array.sort((a, b) => a - b);
+    console.log(array);
 
     if (array[0] < 0 && array[1] < 0 && array.length > 3) {
-        if ((array[0] * array[1]) > (array[array.length - 1] * array[array.length - 2])) {
-            let last = array.pop();
-            array = array.slice(0, 2);
-            array.push(last);
-            return highestProduct(array, firstTime++);
+        let end3Product = highestProduct(array.slice(-3))
+        if ((array[0] * array[1] * array[array.length - 1]) > end3Product) {
+            // let last = array.pop();
+            // array = array.slice(0, 2);
+            // array.push(last);
+            // return highestProduct(array);
+            return array[0] * array[1] * array[array.length - 1];
         }
     }
-    return highestProduct(array.slice(-3), firstTime++);
+    return end3Product;
 }
 
+// console.log('arr = [-1, 2, 3]        >> ', highestProduct([-1, 2, 3]), '    ---- should be -6');
+console.log('arr = [-5, 11, -1, 1]   >> ', highestProduct([-5, 11, -1, 1]), ' ---- should be 55');
+// console.log('arr = [-5, 11, -1, -10] >> ', highestProduct([-5, 11, -1, -10]), '---- should be 550');
+// console.log('arr = [-5, 0, -1, -10]  >> ', highestProduct([-5, 0, -1, -10]), '  ---- should be 0');
+// console.log('arr = [-5, 0, 5, 10]    >> ', highestProduct([-5, 0, 5, 10]), '    ---- should be 0');
+
 // function highestProduct(arr) {
-//     if (arr.length < 3 || Array.isArray(arr) === false) return 0;
+//     if (Array.isArray(arr) === false || arr.length < 3) return 0;
+//     if (array.length === 3) return array.reduce((product, num) => product * num);
 // }
-
-
-// ✗ should return 0 if there are less than 3 elements in the array 3 ms
-// ✔ should return highest product of three elements in the array 6 ms
-// ✗ should return 0 if the input is not an array 0 ms
-// ✗ should handle negative numbers 1 ms
 
 // describe('Highest Product', function () {
 //     it('should return 0 if there are less than 3 elements in the array', function () {
@@ -36,10 +40,10 @@ function highestProduct(array, firstTime = 0) {
 //         expect(highestProduct([1, 2])).to.eql(0);
 //     }, ['edge cases']);
 
-console.log('arr = null' , highestProduct(null));
-console.log('arr = []' , highestProduct([]));
-console.log('arr = [1]' , highestProduct([1]));
-console.log('arr = [1,2]' , highestProduct([1,2]));
+// console.log('arr = null' , highestProduct(null));
+// console.log('arr = []' , highestProduct([]));
+// console.log('arr = [1]' , highestProduct([1]));
+// console.log('arr = [1,2]' , highestProduct([1,2]));
 
 //     it('should return 0 if the input is not an array', function () {
 //         expect(highestProduct(null)).to.eql(0);
