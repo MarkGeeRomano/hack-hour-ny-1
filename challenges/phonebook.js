@@ -36,11 +36,37 @@ function findName(jazbook, name) {
 }
 // best case: O(n/2)
 
-
 // return an object literal representing the jazbook
-function makePhoneBookObject(jazbook){
-  
+function makePhoneBookObject(array) {
+  this.phonebook = {};
+  array.forEach(function (individual) {
+    this.phonebook[individual[0]] = individual[1];
+  });
+
+  return this.phonebook;
+};
+
+makePhoneBookObject.prototype.add = function (name, number) {
+  this.phonebook[name] = number;
 }
+
+makePhoneBookObject.prototype.lookup = function (name) {
+  return this.phonebook[name];
+}
+
+makePhoneBookObject.prototype.remove = function (name) {
+  delete this.phonebook[name];
+}
+
+
+
+
+
+
+
+
+
+
 
 const objectToExport = {
   findName,
