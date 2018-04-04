@@ -7,7 +7,7 @@
 *     ['alex','301-844-3421'],
 *     ['jae','301-844-1211'],
 *     ['david','301-844-0978'],
-*     ['travis','301-844-8505']
+*     ['travis','301-844-8505'],
 *     ['jasmine','1800-974-4539'],
 *   ];
 *         
@@ -36,14 +36,15 @@ function findName(jazbook, name) {
 }
 // best case: O(n/2)
 
+
+
+
 // return an object literal representing the jazbook
 function makePhoneBookObject(array) {
   this.phonebook = {};
-  array.forEach(function (individual) {
-    this.phonebook[individual[0]] = individual[1];
+  array.forEach(person => {
+    this.phonebook[person[0]] = person[1];
   });
-
-  return this.phonebook;
 };
 
 makePhoneBookObject.prototype.add = function (name, number) {
@@ -58,15 +59,7 @@ makePhoneBookObject.prototype.remove = function (name) {
   delete this.phonebook[name];
 }
 
-
-
-
-
-
-
-
-
-
+// const hi = new makePhoneBookObject(jazbook);
 
 const objectToExport = {
   findName,
